@@ -1,0 +1,32 @@
+$ffSU: 'SegoeUi', sans-serif;
+
+@mixin text($color,$fontSize,$textTransform) {
+  color: $color;
+  font-size: $fontSize;
+  text-transform: $textTransform;
+}
+
+.footer{
+  padding-bottom: 60px;
+  background-color: black;
+.container{
+  .wrapper{
+    display: flex;
+    justify-content: space-between;
+    @include text(#fff, 14px, none);
+    .region{
+      display: flex;
+      .icon{
+        margin-top: 4px;
+        margin-right: 10px;
+      }
+      a{
+        @include text(#fff, 14px, none);
+      }
+      a:hover{
+        color: yellowgreen;
+      }
+    }
+  }
+}
+}

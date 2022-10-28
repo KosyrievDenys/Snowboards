@@ -1,0 +1,66 @@
+$ffSU: 'SegoeUi', sans-serif;
+
+@mixin text($color,$fontSize,$textTransform) {
+  color: $color;
+  font-size: $fontSize;
+  text-transform: $textTransform;
+}
+
+.features {
+  .container{
+    max-width: 1200px;
+  }
+  &-items {
+    .item {
+
+    }
+  }
+  .container {
+    .wrapper {
+      .title {
+        h2 {
+          @include text(#000, 48px, uppercase);
+          font-family: $ffSU;
+          text-align: center;
+          margin: 40px 0 36px;
+        }
+
+        img {
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-bottom: 80px;
+        }
+      }
+
+      .items {
+        display: flex;
+        margin-bottom: 126px;
+        justify-content: space-between;
+
+        .item {
+          width: 23%;
+          transition: all .2s ease;
+
+          img {
+            margin-bottom: 17px;
+            width: 100%;
+          }
+
+          p {
+            display: inline-block;
+            line-height: 1.9;
+            @include text(#000, 16px, none);
+          }
+        }
+        .item:hover img{
+          opacity: .2;
+        }
+        .item:hover p{
+          color: yellowgreen;
+        }
+      }
+    }
+  }
+
+}

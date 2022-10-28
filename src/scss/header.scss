@@ -1,0 +1,155 @@
+$ffSU: 'SegoeUi', sans-serif;
+
+@mixin text($color,$fontSize,$textTransform) {
+  color: $color;
+  font-size: $fontSize;
+  text-transform: $textTransform;
+}
+
+.header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: black;
+
+  .container {
+    width: 95%;
+
+    .wrapper {
+      height: 105px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 5%;
+
+      .left {
+        margin-left: 30px;
+        display: flex;
+        align-items: center;
+
+
+        .logo {
+          position: relative;
+          transition: all .2s ease;
+
+          img {
+            display: inline-block;
+          }
+
+          .logo-more {
+            position: absolute;
+            left: -25px;
+            top: -25px;
+            z-index: 2;
+          }
+
+          .logo-less {
+            position: absolute;
+            top: -15px;
+            left: 0;
+            z-index: 1;
+            height: 35px;
+          }
+        }
+
+        .logo:hover {
+          opacity: .7;
+        }
+
+        .nav {
+          margin-left: 60px;
+          display: flex;
+
+          li {
+              display: inline-block;
+            list-style: none;
+              padding: 40px 15px;cursor: pointer;
+              transition: all .3s ease;
+            a {
+              @include text(#fff, 13px, uppercase);
+            }
+
+          }
+            li:hover a{
+              color: yellowgreen;
+            }
+
+        }
+      }
+
+      .right {
+        .icons {
+          display: flex;
+          position: relative;
+
+          .search, .basket {
+            transition: all .2s ease;
+          }
+
+          .search {
+            height: 33px;
+            width: 31px;
+            padding: 6px 4px 1px 4px;
+            margin: 10px;
+            position: absolute;
+            top: -26px;
+            right: 40px;
+
+            img:nth-child(1) {
+              display: none;
+            }
+          }
+
+          .search:hover img:nth-child(1) {
+            display: block;
+            cursor: pointer;
+          }
+
+          .search:hover img:nth-child(2) {
+            display: none;
+          }
+
+          .basket {
+            height: 32px;
+            width: 31px;
+            margin: 10px 0;
+            padding: 7px 9px 8px 9px;
+            position: absolute;
+            top: -27px;
+            right: 9px;
+            transition: all .2s ease;
+
+            img:nth-child(1) {
+              display: none;
+            }
+
+          }
+
+          .basket:hover img:nth-child(2) {
+            display: none;
+          }
+          .basket:hover img:nth-child(1) {
+            display: block;
+            cursor: pointer;
+          }
+
+
+          .basket:hover {
+            background: url('../img/header_icons/shopping_bag_icon-green.png') center no-repeat;
+            cursor: pointer;
+          }
+
+          .sum {
+            @include text(#fff, 13px, uppercase);
+            margin: auto;
+            position: absolute;
+            top: -8px;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
