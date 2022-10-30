@@ -64,8 +64,8 @@ $ffSU: 'SegoeUi', sans-serif;
 
           li {
               display: inline-block;
-            list-style: none;
-              padding: 40px 15px;cursor: pointer;
+              padding: 40px 15px;
+            cursor: pointer;
               transition: all .3s ease;
             a {
               @include text(#fff, 13px, uppercase);

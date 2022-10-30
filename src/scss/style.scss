@@ -35,6 +35,11 @@ html {
   font-family: 'MyriadPro', sans-serif;
 
 }
+.container{
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+}
 
 a {
   text-decoration: none;
@@ -45,13 +50,12 @@ a:hover{
 img {
   display: block;
 }
-.container{
-  width: 70%;
-  height: 100%;
-  margin: 0 auto;
-}
 .icon{
   cursor: pointer;
+}
+li{
+  list-style: none;
+  padding: 0;
 }
 
 @import "header";
@@ -59,7 +63,6 @@ img {
 @import "series";
 @import "company";
 @import 'features';
-@import 'info';
 @import 'footer';
 
 @import "media";

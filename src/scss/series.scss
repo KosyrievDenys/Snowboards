@@ -34,9 +34,10 @@ $ffSU: 'SegoeUi', sans-serif;
 
     }
 
-    .slider {
-      .slider_wrapper {
+    .series-slider {
+      .slider-wrapper {
         .slide {
+          width: 33.3333%;
           //max-width: 167px;
           //margin: 0 120px;
           text-align: center;
