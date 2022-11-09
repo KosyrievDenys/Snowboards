@@ -10,7 +10,7 @@
     display:         flex;
     justify-content: space-between;
     flex-wrap:       wrap;
-    padding:         0 30px 0;
+    padding:         0 25px 0;
   }
   .products, .about, .support, .newsletter {
     width:         23%;
@@ -68,7 +68,6 @@
     }
   }
   .copywriting {
-    //padding: 0 30px;
     width:           100%;
     display:         flex;
     justify-content: space-between;
@@ -76,7 +75,6 @@
       @include text(#fff, 14px, none);
     }
     .icon {
-      //margin-top:   4px;
       margin-right: 10px;
     }
     a:hover {
@@ -89,8 +87,6 @@
   .footer {
     padding-bottom: 70px;
     .wrapper {
-      //width: 30%;
-      //padding:   0;
       padding-bottom: 0;
       flex-wrap:      wrap;
     }
@@ -101,13 +97,9 @@
     .newsletter {
       width:         70%;
       margin-bottom: 0;
-      //left: 0;
-      //width: 68%;
       .newsletter-intro {
         display:     flex;
-        //justify-content: space-between;
         align-items: center;
-        //justify-content: space-between;
       }
       .form {
         margin-bottom: 0;
@@ -115,104 +107,71 @@
     }
     .newsletter-items {
       justify-content: space-around;
-      .li {
-        height: 16px;
-        padding-left: 2%;
+      li {
+        height: 18px;
       }
-      //li:nth-child(1) {
-      //  padding-left: 46px;
-      //}
     }
     .copywriting {
-      width:          20%;
-      //position:       absolute;
-      //bottom:         5px;
-      //right:          0;
-      flex-direction: column-reverse;
-      text-align:     right;
-      justify-content: center;
-
+      width:           29%;
+      flex-direction:  column-reverse;
+      text-align:      right;
+      justify-content: end;
       .region {
-        justify-content: right;
-        margin-bottom:   20px;
-
-        .icon {
-          margin-top:   4px;
-          margin-right: 10px;
-        }
-      }
-    }
-
-    @media(max-width: 768px) {
-      .footer {
-        padding-top:    30px;
-        padding-bottom: 40px;
-
-        .container {
-          width: 100% !important;
-          //margin: 0 10px;
-          .wrapper {
-
-            .support {
-              padding: 25px 10px !important;
-
-              ul {
-                width:     100vw;
-                //width: 100%;
-                display:   flex;
-                flex-wrap: wrap;
-
-                li {
-                  width:        50%;
-                  padding-left: 0 !important;
-                }
-
-                li:nth-child(1), li:nth-child(6) {
-                  width: 100%;
-                }
-              }
-            }
-
-            .newsletter {
-              .newsletter-intro {
-                flex-wrap:       wrap;
-                justify-content: center;
-                .form {
-                  input {
-                    width: 225px !important;
-                  }
-                }
-
-                ul {
-                  margin-top: 30px;
-                  width:      250px !important;
-
-                  li {
-                    //padding-left: 0 !important;
-                  }
-
-                }
-              }
-            }
-
-            .copywriting {
-              width:    100vw;
-              position: static !important;
-              margin:   30px auto 0;
-              //left: 50% !important;
-              //bottom: 0 !important;
-              .region {
-                margin: 0 auto;
-              }
-
-              .data {
-                text-align: center;
-              }
-            }
-          }
-        }
+        margin-bottom: 15px;
       }
     }
   }
 }
+
+@media(max-width: 768px) {
+  .footer {
+    padding: 25px 0 40px;
+    .wrapper {
+      padding: 0 20px 0;
+    }
+    .products, .about {
+      width: 45%;
+    }
+    .support {
+      width: 100%;
+      ul {
+        display:   flex;
+        flex-wrap: wrap;
+        li {
+          width: 45%;
+        }
+        li:nth-child(1), li:nth-child(6) {
+          width: 100%;
+        }
+      }
+    }
+    .newsletter {
+      width:         100%;
+      text-align:    center;
+      margin-bottom: 30px;
+      .newsletter-intro {
+        flex-wrap:      wrap;
+        flex-direction: column;
+      }
+      .form {
+        margin: 0 auto 30px;
+        input {
+          width: 225px;
+        }
+      }
+      ul {
+        width: 250px;
+      }
+    }
+    .copywriting {
+      width:  100%;
+      margin: 0;
+        text-align: center;
+      .region {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
 

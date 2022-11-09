@@ -2,18 +2,18 @@
 
 .header {
   width:            100%;
-  height:           105px;
-  position:         absolute;
+  position:         fixed;
   top:              0;
   left:             0;
   z-index:          1000;
   background-color: black;
   .container {
-    width:     92%;
-    max-width: 1230px;
+    max-width: 1400px;
+    padding: 0 100px;
   }
   .wrapper {
-    height: 100%;
+  height:           105px;
+    //height: 100%;
     display:         flex;
     justify-content: space-between;
     align-items:     center;
@@ -25,7 +25,7 @@
   }
   .logo {
     display:    flex;
-    transition: all .2s ease;
+    transition: .3s linear;
   }
   .logo-more {
     height:  60px;
@@ -47,10 +47,10 @@
       display:    inline-block;
       padding:    40px 15px;
       cursor:     pointer;
-      transition: all .3s ease;
     }
     a {
       @include text(#fff, 13px, uppercase);
+      transition: .3s linear;
     }
     li:hover a {
       color: yellowgreen;
@@ -64,9 +64,12 @@
     .search, .basket {
       margin:      0 25px;
       align-items: center;
-      transition:  all .2s ease;
+      transition: .3s linear;
     }
     .search {
+      img{
+        transition: .3s linear;
+      }
       img:nth-child(1) {
         display: none;
       }
@@ -84,6 +87,9 @@
       justify-content: space-between;
       margin-right:    0;
       .icon{
+        img{
+          transition: .3s linear;
+        }
         img:nth-child(1) {
           display: none;
         }
@@ -109,8 +115,9 @@
 @media(max-width: 1024px) {
   .header {
     height: 95px;
+    //align-content: center;
     .container {
-      width: 97%;
+      padding: 0 20px;
       .header-nav {
         display: none !important;
       }
@@ -128,7 +135,10 @@
           width:      100vw;
           text-align: center;
           padding:    15px 0;
-          border:     2px solid white;
+          border-bottom:     2px solid white;
+        }
+        li:nth-child(1){
+          border-top: 2px solid white;
         }
       }
       .icons {
