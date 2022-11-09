@@ -1,0 +1,7 @@
+$ffSU: 'SegoeUi', sans-serif;
+
+@mixin text($color,$fontSize,$textTransform) {
+  color: $color;
+  font-size: $fontSize;
+  text-transform: $textTransform;
+}

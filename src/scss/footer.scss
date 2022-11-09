@@ -1,205 +1,214 @@
-$ffSU: 'SegoeUi', sans-serif;
-
-@mixin text($color,$fontSize,$textTransform) {
-  color: $color;
-  font-size: $fontSize;
-  text-transform: $textTransform;
-}
+@import './variables-mexins';
 
 .footer {
   background-color: black;
-  padding-bottom: 60px;
-
+  padding:          78px 0 60px;
   .container {
-    .wrapper {
-      .info {
-        padding: 78px 0 68px;
-        display: flex;
-        justify-content: space-between;
-
-
-        .products, .about, .support, .newsletter {
-          display: block;
-          padding: -40px;
-          position: relative;
-          top: 0;
-          left: -40px;
-
-          h3 {
-            @include text(#babdb5, 25px, uppercase);
-            margin-bottom: 24px;
-            padding-left: 40px;
-          }
-
-          a {
-            @include text(#a6a8a3, 16px, none);
-            line-height: 2;
-          }
-
-          a:hover {
-            color: yellowgreen;
-          }
-        }
-
-        .newsletter {
-
-          .form {
-            margin-bottom: 70px;
-            display: flex;
-            position: relative;
-
-            .input {
-              height: 40px;
-              width: 160px;
-              position: relative;
-              top: -1px;
-              left: 0;
-              outline: 0;
-              z-index: 3;
-            }
-
-            .input:hover {
-              border: 3px solid yellowgreen;
-            }
-
-
-            .btn {
-              height: 39px;
-              width: 60px;
-              @include text(black, 15px, uppercase);
-              //padding: 14px 15px;
-              position: relative;
-              top: 0;
-              left: -2px;
-              border: 0;
-              cursor: pointer;
-            }
-
-            .btn:hover {
-              background-color: yellowgreen;
-            }
-          }
-
-          .newsletter-items {
-            width: 116%;
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            top: 0;
-            left: -40px;
-
-
-            li {
-              height: 20px;
-              display: block;
-              transition: all .2s ease;
-
-              a {
-                height: 100%;
-                width: 100%;
-
-                img {
-                  height: 100%;
-                  width: 100%;
-                }
-
-                img:hover {
-                  transform: rotate(15deg);
-                }
-              }
-            }
-          }
-        }
-      }
-
-      .copywriting {
-        display: flex;
-        justify-content: space-between;
-        @include text(#fff, 14px, none);
-
-        .region {
-          display: flex;
-
-          .icon {
-            margin-top: 4px;
-            margin-right: 10px;
-          }
-
-          a {
-            @include text(#fff, 14px, none);
-          }
-
-          a:hover {
-            color: yellowgreen;
-          }
-        }
-      }
+    max-width: 1000px;
+  }
+  .wrapper {
+    display:         flex;
+    justify-content: space-between;
+    flex-wrap:       wrap;
+    padding:         0 30px 0;
+  }
+  .products, .about, .support, .newsletter {
+    width:         23%;
+    margin-bottom: 68px;
+    h3 {
+      @include text(#babdb5, 25px, uppercase);
+      margin-bottom: 24px;
+    }
+    a {
+      @include text(#a6a8a3, 16px, none);
+      line-height: 2;
+    }
+    a:hover {
+      color: yellowgreen;
+    }
+  }
+  .newsletter {
+    .form {
+      margin-bottom: 70px;
+      display:       flex;
+    }
+    .input {
+      height:  40px;
+      border:  0;
+      padding: 10px;
+    }
+    .input:hover {
+      border: 3px solid yellowgreen;
+    }
+    .btn {
+      height: 40px;
+      width:  60px;
+      @include text(black, 15px, uppercase);
+      border: 0;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: yellowgreen;
+    }
+  }
+  .newsletter-items {
+    width:           100%;
+    display:         flex;
+    justify-content: space-between;
+    li {
+      height:     20px;
+      display:    block;
+      transition: all .2s ease;
+    }
+    img {
+      height: 100%;
+    }
+    img:hover {
+      transform: rotate(15deg);
+    }
+  }
+  .copywriting {
+    //padding: 0 30px;
+    width:           100%;
+    display:         flex;
+    justify-content: space-between;
+    .data, .region a {
+      @include text(#fff, 14px, none);
+    }
+    .icon {
+      //margin-top:   4px;
+      margin-right: 10px;
+    }
+    a:hover {
+      color: yellowgreen;
     }
   }
 }
 
-@media(max-width: 1064px) {
+@media(max-width: 1024px) {
   .footer {
     padding-bottom: 70px;
-    padding-top: 75px;
+    .wrapper {
+      //width: 30%;
+      //padding:   0;
+      padding-bottom: 0;
+      flex-wrap:      wrap;
+    }
+    .products, .about, .support {
+      width:         30%;
+      margin-bottom: 20px;
+    }
+    .newsletter {
+      width:         70%;
+      margin-bottom: 0;
+      //left: 0;
+      //width: 68%;
+      .newsletter-intro {
+        display:     flex;
+        //justify-content: space-between;
+        align-items: center;
+        //justify-content: space-between;
+      }
+      .form {
+        margin-bottom: 0;
+      }
+    }
+    .newsletter-items {
+      justify-content: space-around;
+      .li {
+        height: 16px;
+        padding-left: 2%;
+      }
+      //li:nth-child(1) {
+      //  padding-left: 46px;
+      //}
+    }
+    .copywriting {
+      width:          20%;
+      //position:       absolute;
+      //bottom:         5px;
+      //right:          0;
+      flex-direction: column-reverse;
+      text-align:     right;
+      justify-content: center;
 
-    .container {
-      width: 95%;
+      .region {
+        justify-content: right;
+        margin-bottom:   20px;
 
-      .wrapper {
-        position: relative;
+        .icon {
+          margin-top:   4px;
+          margin-right: 10px;
+        }
+      }
+    }
 
+    @media(max-width: 768px) {
+      .footer {
+        padding-top:    30px;
+        padding-bottom: 40px;
 
-        .info {
+        .container {
+          width: 100% !important;
+          //margin: 0 10px;
+          .wrapper {
 
-          padding: 0;
-          flex-wrap: wrap;
+            .support {
+              padding: 25px 10px !important;
 
-          .products, .about, .support, .newsletter {
+              ul {
+                width:     100vw;
+                //width: 100%;
+                display:   flex;
+                flex-wrap: wrap;
 
-            li {
-              padding: -40px;
-            }
-          }
-
-          .newsletter {
-            left: 0;
-
-            .newsletter-intro {
-              display: flex;
-              //justify-content: space-between;
-              align-items: center;
-
-              .form {
-                margin-bottom: 0;
-              }
-
-              .newsletter-items {
                 li {
-                  height: 17px;
-                  padding-left: 25px;
+                  width:        50%;
+                  padding-left: 0 !important;
+                }
+
+                li:nth-child(1), li:nth-child(6) {
+                  width: 100%;
                 }
               }
             }
-          }
-        }
-      }
 
-      .copywriting {
-        width: 50%;
-        position: absolute;
-        bottom: 5px;
-        right: 0;
-        flex-direction: column-reverse;
-        text-align: right;
+            .newsletter {
+              .newsletter-intro {
+                flex-wrap:       wrap;
+                justify-content: center;
+                .form {
+                  input {
+                    width: 225px !important;
+                  }
+                }
 
-        .region {
-          justify-content: right;
-          margin-bottom: 20px;
+                ul {
+                  margin-top: 30px;
+                  width:      250px !important;
 
-          .icon {
-            margin-top: 4px;
-            margin-right: 10px;
+                  li {
+                    //padding-left: 0 !important;
+                  }
+
+                }
+              }
+            }
+
+            .copywriting {
+              width:    100vw;
+              position: static !important;
+              margin:   30px auto 0;
+              //left: 50% !important;
+              //bottom: 0 !important;
+              .region {
+                margin: 0 auto;
+              }
+
+              .data {
+                text-align: center;
+              }
+            }
           }
         }
       }
@@ -207,10 +216,3 @@ $ffSU: 'SegoeUi', sans-serif;
   }
 }
 
-@media(max-width: 768px) {
-  .footer{
-    newsletter{
-
-    }
-  }
-}

@@ -1,153 +1,168 @@
-$ffSU: 'SegoeUi', sans-serif;
-
-@mixin text($color,$fontSize,$textTransform) {
-  color: $color;
-  font-size: $fontSize;
-  text-transform: $textTransform;
-}
+@import './variables-mexins';
 
 .header {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  width:            100%;
+  height:           105px;
+  position:         absolute;
+  top:              0;
+  left:             0;
+  z-index:          1000;
   background-color: black;
-
   .container {
-    width: 95%;
-
-    .wrapper {
-      height: 105px;
-      display: flex;
-      justify-content: space-between;
+    width:     92%;
+    max-width: 1230px;
+  }
+  .wrapper {
+    height: 100%;
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+  }
+  .left {
+    //height:      100%;
+    display:     flex;
+    align-items: center;
+  }
+  .logo {
+    display:    flex;
+    transition: all .2s ease;
+  }
+  .logo-more {
+    height:  60px;
+    z-index: 2;
+  }
+  .logo-less {
+    position: relative;
+    top:      18px;
+    left:     -26px;
+    z-index:  1;
+    height:   40px;
+  }
+  .logo:hover {
+    opacity: .7;
+  }
+  .header-nav {
+    display: flex;
+    li {
+      display:    inline-block;
+      padding:    40px 15px;
+      cursor:     pointer;
+      transition: all .3s ease;
+    }
+    a {
+      @include text(#fff, 13px, uppercase);
+    }
+    li:hover a {
+      color: yellowgreen;
+    }
+  }
+  .right {
+    .icons {
+      display:     flex;
       align-items: center;
-      margin: 0 5%;
-
-      .left {
-        margin-left: 30px;
-        display: flex;
-        align-items: center;
-
-
-        .logo {
-          position: relative;
-          transition: all .2s ease;
-
-          img {
-            display: inline-block;
-          }
-
-          .logo-more {
-            position: absolute;
-            left: -25px;
-            top: -25px;
-            z-index: 2;
-          }
-
-          .logo-less {
-            position: absolute;
-            top: -15px;
-            left: 0;
-            z-index: 1;
-            height: 35px;
-          }
-        }
-
-        .logo:hover {
-          opacity: .7;
-        }
-
-        .nav {
-          margin-left: 60px;
-          display: flex;
-
-          li {
-              display: inline-block;
-              padding: 40px 15px;
-            cursor: pointer;
-              transition: all .3s ease;
-            a {
-              @include text(#fff, 13px, uppercase);
-            }
-
-          }
-            li:hover a{
-              color: yellowgreen;
-            }
-
+    }
+    .search, .basket {
+      margin:      0 25px;
+      align-items: center;
+      transition:  all .2s ease;
+    }
+    .search {
+      img:nth-child(1) {
+        display: none;
+      }
+    }
+    .search:hover img:nth-child(1) {
+      display: inline;
+      cursor:  pointer;
+    }
+    .search:hover img:nth-child(2) {
+      display: none;
+    }
+    .basket {
+      width:           38px;
+      display:         flex;
+      justify-content: space-between;
+      margin-right:    0;
+      .icon{
+        img:nth-child(1) {
+          display: none;
         }
       }
+      .icon:hover img:nth-child(2) {
+        display: none;
+      }
+      .icon:hover img:nth-child(1) {
+        display: inline;
+        cursor:  pointer;
+      }
+    }
+    .sum {
+      @include text(#fff, 13px, uppercase);
+    }
+    .header-burger {
+      display: none;
+      //margin-right: 0;
+    }
+  }
+}
 
-      .right {
-        .icons {
-          display: flex;
-          position: relative;
-
-          .search, .basket {
-            transition: all .2s ease;
+@media(max-width: 1024px) {
+  .header {
+    height: 95px;
+    .container {
+      width: 97%;
+      .header-nav {
+        display: none !important;
+      }
+      .header-nav.active-header-nav {
+        display:          block !important;
+        flex-direction:   column;
+        position:         absolute;
+        top:              95px;
+        left:             0;
+        z-index:          50;
+        margin:           0;
+        padding:          0;
+        background-color: black;
+        li {
+          width:      100vw;
+          text-align: center;
+          padding:    15px 0;
+          border:     2px solid white;
+        }
+      }
+      .icons {
+        .sum {
+          margin-left: 10px;
+        }
+        .header-burger {
+          display:     block !important;
+          cursor:      pointer;
+          margin-left: 50px;
+          img {
+            height: 40px;
+            width:  40px
           }
-
-          .search {
-            height: 33px;
-            width: 31px;
-            padding: 6px 4px 1px 4px;
-            margin: 10px;
-            position: absolute;
-            top: -26px;
-            right: 40px;
-
-            img:nth-child(1) {
-              display: none;
-            }
-          }
-
-          .search:hover img:nth-child(1) {
-            display: block;
-            cursor: pointer;
-          }
-
-          .search:hover img:nth-child(2) {
+          img:nth-child(2) {
             display: none;
           }
+        }
+      }
+    }
+  }
+}
 
-          .basket {
-            height: 32px;
-            width: 31px;
-            margin: 10px 0;
-            padding: 7px 9px 8px 9px;
-            position: absolute;
-            top: -27px;
-            right: 9px;
-            transition: all .2s ease;
-
-            img:nth-child(1) {
-              display: none;
-            }
-
-          }
-
-          .basket:hover img:nth-child(2) {
-            display: none;
-          }
-          .basket:hover img:nth-child(1) {
-            display: block;
-            cursor: pointer;
-          }
-
-
-          .basket:hover {
-            background: url('../img/header_icons/shopping_bag_icon-green.png') center no-repeat;
-            cursor: pointer;
-          }
-
-          .sum {
-            @include text(#fff, 13px, uppercase);
-            margin: auto;
-            position: absolute;
-            top: -8px;
-            right: 0;
-          }
+@media(max-width: 567px) {
+  .header {
+    .left {
+      .logo {
+        .logo-more {
+          height: 45px;
+        }
+        .logo-less {
+          height: 33px;
+          top:    11px;
+          left:   -23px;
         }
       }
     }
